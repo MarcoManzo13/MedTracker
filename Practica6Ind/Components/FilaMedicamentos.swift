@@ -19,11 +19,13 @@ struct FilaMedicamento: View {
               Text(name)
                   .font(.headline)
                   .font(.system(size: 15))
+                  .frame(alignment: .leading)
               Text("-")
               Text(time)
                   .font(.system(size: 15))
               Spacer()
           }
+          .frame(alignment: .leading)
           HStack {
               Text(dosage)
           }

@@ -5,45 +5,56 @@ struct DashboardView: View {
     @State var value: Int
     
     var body: some View {
-        VStack {
-            Text(title)
-                .font(.headline)
-                .foregroundColor(.primary)
-                .padding(.top, 8)
+        ZStack {
+            
+            RoundedRectangle(cornerRadius: 10)
+                .fill(Color.white)
+                .shadow(radius: 3)
+                .frame(width: 350)
+            VStack {
+                Text(title)
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.primary)
+                    .padding(.top, 8)
+                    .multilineTextAlignment(.center)
 
-            Text("\(value)") // Display the state variable
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-                .padding(.vertical, 12)
+                Text("\(value)") // Display the state variable
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                    .padding(.vertical, 12)
 
-            HStack(spacing: 40) {
-                Button(action: {
-                    self.value -= 1 // Decrement action
-                }) {
-                    Image(systemName: "minus.circle.fill")
-                        .font(.system(size: 36))
-                        .foregroundColor(.red)
+                HStack(spacing: 40) {
+                    Button(action: {
+                        self.value -= 1 // Decrement action
+                    }) {
+                        Image(systemName: "minus.circle.fill")
+                            .font(.system(size: 36))
+                            .foregroundColor(.red)
+                    }
+
+                    Button(action: {
+                        self.value += 1 // Increment action
+                    }) {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 36))
+                            .foregroundColor(.green)
+                    }
                 }
-
-                Button(action: {
-                    self.value += 1 // Increment action
-                }) {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 36))
-                        .foregroundColor(.green)
-                }
+                .padding(.bottom, 8)
+                Image("Medicina")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .edgesIgnoringSafeArea(.all)
+                    .clipShape(Circle())
+                    .frame(width: 300)
             }
-            .padding(.bottom, 8)
+            .padding(.horizontal)
         }
-        .padding(.horizontal)
-        .background(Color.white.opacity(0.7))
-        .cornerRadius(12)
-        .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
     }
 }
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView(title: "Medicamentos tomados a tiempo", value: 0)
+        DashboardView(title: "Medicine taken on time", value: 0)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -33,8 +33,8 @@ struct Login: View {
                     .frame(width: 350, height: 150)
                 VStack {
                     HStack {
-                        Text("Correo: ")
-                        TextField("Correo", text: $email)
+                        Text("Email: ")
+                        TextField("Email", text: $email)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
@@ -44,8 +44,8 @@ struct Login: View {
                     .padding(.leading, 70)
 
                     HStack {
-                        Text("Contraseña: ")
-                        SecureField("Contraseña", text: $password)
+                        Text("Password: ")
+                        SecureField("Password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocapitalization(.none)
                             .disableAutocorrection(true)
@@ -73,7 +73,7 @@ struct Login: View {
                                 .frame(width: 300, height: 60)
                                 .cornerRadius(20)
                         
-                        Text("Iniciar Sesión")
+                        Text("Log In")
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                             
@@ -99,7 +99,7 @@ struct Login: View {
                     RegistrarPerfil(email: $email, password: $password)
                         .navigationBarBackButtonHidden(true)
                 }) {
-                    Text("¿No tienes cuenta aún? Regístrate")
+                    Text("Don't have an account? Register")
                         .padding()
                         .foregroundColor(.white)
                         .fontWeight(.bold)

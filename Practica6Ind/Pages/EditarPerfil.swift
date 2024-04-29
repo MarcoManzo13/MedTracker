@@ -27,9 +27,9 @@ struct EditarPerfil: View {
                             .frame(width: 350, height: 400)
                         VStack {
                             
-                            Text("Nombre")
+                            Text("Name")
                             HStack {
-                                TextField("Editar Nombre", text: $nombre)
+                                TextField("Edit Name", text: $nombre)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .autocapitalization(.none)
                                     .disableAutocorrection(true)
@@ -39,9 +39,9 @@ struct EditarPerfil: View {
                                     .frame(width: 150)
                             }
                                 
-                            Text("Apellido")
+                            Text("Last Name")
                             HStack {
-                                TextField("Editar Apellido", text: $apellido)
+                                TextField("Edit Last Name", text: $apellido)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .autocapitalization(.none)
                                     .disableAutocorrection(true)
@@ -52,9 +52,9 @@ struct EditarPerfil: View {
                             }
                             
                             
-                            Text("Género")
+                            Text("Gender")
                             HStack {
-                                TextField("Editar Género", text: $genero)
+                                TextField("Edit Gender", text: $genero)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .autocapitalization(.none)
                                     .disableAutocorrection(true)
@@ -64,9 +64,9 @@ struct EditarPerfil: View {
                                     .frame(width: 150)
                             }
                             
-                            Text("Fecha de Nacimiento")
+                            Text("Date of Birth")
                             HStack {
-                                TextField("Editar Fecha de Nacimiento", text: $fechaNacimiento)
+                                TextField("Edit Date of Birth", text: $fechaNacimiento)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .autocapitalization(.none)
                                     .disableAutocorrection(true)
@@ -95,7 +95,7 @@ struct EditarPerfil: View {
                                         .frame(width: 300, height: 60)
                                         .cornerRadius(20)
                                 
-                                Text("Guardar")
+                                Text("Save")
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                     
@@ -108,7 +108,7 @@ struct EditarPerfil: View {
                     
                     
                 }
-                .navigationBarTitle("Editar Perfil")
+                .navigationBarTitle("Edit Profile")
                 .navigationBarTitleDisplayMode(.large)
                 .onAppear {
                     modeloUsuarios.getData()

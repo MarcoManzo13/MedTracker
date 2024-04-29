@@ -97,7 +97,7 @@ struct AgregarMedicamento: View {
                                                 Button(action: {
                                                     modeloMedicamentos.deleteDataMedicamentos(medicamentosToDelete: medicamento)
                                                 }, label: {
-                                                    Text("Borrar")
+                                                    Text("Delete")
                                                         .foregroundColor(.white)
                                                         .padding(.horizontal, 12)
                                                         .padding(.vertical, 6)
@@ -107,7 +107,7 @@ struct AgregarMedicamento: View {
                                                 Button(action: {
                                                     mostrarEditarMedicamentos.toggle()
                                                 }, label: {
-                                                    Text("Editar")
+                                                    Text("Edit")
                                                         .foregroundColor(.white)
                                                         .padding(.horizontal, 12)
                                                         .padding(.vertical, 6)
@@ -122,13 +122,13 @@ struct AgregarMedicamento: View {
                                 if mostrarEditarMedicamentos {
                                     VStack {
                                         
-                                        TextField("Editar Dosis", text: $dosis)
+                                        TextField("Edit Dosis", text: $dosis)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                             .autocapitalization(.none)
                                             .disableAutocorrection(true)
                                             .frame(width: 300, height: 40)
                                         
-                                        TextField("Editar Notas Adicionales", text: $notasAdicionales)
+                                        TextField("Edit Aditional Comments", text: $notasAdicionales)
                                             .textFieldStyle(RoundedBorderTextFieldStyle())
                                             .autocapitalization(.none)
                                             .disableAutocorrection(true)
@@ -141,7 +141,7 @@ struct AgregarMedicamento: View {
                                             dosis = ""
                                             notasAdicionales = ""
                                         }) {
-                                            Text("Guardar")
+                                            Text("Save")
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white)
                                                 .padding(.horizontal, 12)
@@ -165,9 +165,9 @@ struct AgregarMedicamento: View {
                                 .shadow(radius: 3)
                                 .frame(width: 350)
                             VStack {
-                                Text("Nombre del Medicamento")
+                                Text("Name of medicine")
                                     .padding(.vertical, 20)
-                                TextField("Buscar Medicamento", text: $searchText, onEditingChanged: { isEditing in
+                                TextField("Search...", text: $searchText, onEditingChanged: { isEditing in
                                     self.isSearching = isEditing
                                 })
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -198,17 +198,17 @@ struct AgregarMedicamento: View {
                                 }
                                 
                                 HStack {
-                                    Text("Medicamento:")
+                                    Text("Medicine:")
                                         .frame(width: 150)
-                                    TextField("Nombre del Medicamento", text: $nombre)
+                                    TextField("Name of medicine", text: $nombre)
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .frame(width: 150)
                                 }
                                 
                                 HStack {
-                                    Text("Sustancia Activa:")
+                                    Text("Active Substance:")
                                         .frame(width: 150)
-                                    TextField("Sustancia Activa", text: $sustanciaActiva)
+                                    TextField("Active Substance", text: $sustanciaActiva)
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .frame(width: 150)
                                 }
@@ -222,9 +222,9 @@ struct AgregarMedicamento: View {
                                 }
                                 
                                 HStack {
-                                    Text("Tipo:")
+                                    Text("Type:")
                                         .frame(width: 150)
-                                    TextField("Tipo de Medicamento", text: $tipoMedicamento)
+                                    TextField("Type of Medicine", text: $tipoMedicamento)
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .frame(width: 150)
                                 }
@@ -240,7 +240,7 @@ struct AgregarMedicamento: View {
                                                     .frame(width: 250, height: 40)
                                                     .cornerRadius(20)
                                             
-                                            Text("Añadir Recordatorio")
+                                            Text("Add Notification")
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white)
                                                 
@@ -259,13 +259,13 @@ struct AgregarMedicamento: View {
                                             .frame(width: 300)
                                     
                                         VStack {
-                                            TextField("Medicamento", text: $nombre)
+                                            TextField("Medicine", text: $nombre)
                                                 .padding()
                                                 .background(Color(UIColor.systemBackground))
                                                 .cornerRadius(8.0)
                                                 .padding(.horizontal)
                                             
-                                            DatePicker("Hora", selection: $selectedDate, displayedComponents: .hourAndMinute)
+                                            DatePicker("Time", selection: $selectedDate, displayedComponents: .hourAndMinute)
                                                 .padding()
                                                 .background(Color(UIColor.systemBackground))
                                                 .cornerRadius(8.0)
@@ -273,28 +273,32 @@ struct AgregarMedicamento: View {
                                             
                                             VStack {
                                                 ForEach(0..<7, id: \.self) { index in
-                                                    Checkbox(isChecked: Binding(
-                                                        get: {
-                                                            self.selectedDays.contains(index)
-                                                        },
-                                                        set: { _ in
-                                                            if self.selectedDays.contains(index) {
-                                                                self.selectedDays.removeAll(where: { $0 == index })
-                                                            } else {
-                                                                self.selectedDays.append(index)
-                                                            }
-                                                        }
-                                                    ))
-                                                    .padding()
-                                                    .background(Color(UIColor.systemBackground))
-                                                    .cornerRadius(8.0)
-                                                    .padding(.horizontal)
+                                                    HStack {
                                                     
-                                                    Text("\(Calendar.current.weekdaySymbols[index])")
+                                                                    
+                                                        Text("\(Calendar.current.weekdaySymbols[index])")
+                                                            .padding()
+                                                            .background(Color(UIColor.systemBackground))
+                                                            .cornerRadius(8.0)
+                                                            .padding(.horizontal)
+                                                        Checkbox(isChecked: Binding(
+                                                            get: {
+                                                                self.selectedDays.contains(index)
+                                                            },
+                                                            set: { _ in
+                                                                if self.selectedDays.contains(index) {
+                                                                    self.selectedDays.removeAll(where: { $0 == index })
+                                                                } else {
+                                                                    self.selectedDays.append(index)
+                                                                }
+                                                            }
+                                                        ))
                                                         .padding()
                                                         .background(Color(UIColor.systemBackground))
                                                         .cornerRadius(8.0)
                                                         .padding(.horizontal)
+                                                    
+                                                    }
                                                 }
                                             }
                                             
@@ -302,7 +306,7 @@ struct AgregarMedicamento: View {
                                             Button(action: {
                                                 mostrarNotificaciones = false
                                             }) {
-                                                Text("Guardar")
+                                                Text("Save")
                                                     .padding()
                                                     .foregroundColor(.white)
                                                     .background(Color.blue)
@@ -315,9 +319,9 @@ struct AgregarMedicamento: View {
                                     }
                                 }
                                 
-                                Text("Notas Adicionales:")
+                                Text("Aditional Comments:")
                                 HStack {
-                                    TextField("Notas Adicionales", text: $notasAdicionales)
+                                    TextField("Aditional Comments", text: $notasAdicionales)
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .autocapitalization(.none)
                                         .disableAutocorrection(true)
@@ -344,7 +348,7 @@ struct AgregarMedicamento: View {
                                                     .frame(width: 300, height: 40)
                                                     .cornerRadius(20)
                                             
-                                            Text("Guardar")
+                                            Text("Save")
                                                 .fontWeight(.bold)
                                                 .foregroundColor(.white)
                                                 
@@ -378,13 +382,13 @@ struct AgregarMedicamento: View {
                                 
                                 HStack {
                                     if mostrarAnadirMedicamentos {
-                                        Text("Cancelar")
+                                        Text("Cancel")
                                             .fontWeight(.bold)
                                             .foregroundColor(.white)
                                         Image(systemName: "minus")
                                             .foregroundColor(.white)
                                     } else {
-                                        Text("Añadir Medicamento")
+                                        Text("Add Medicine")
                                             .fontWeight(.bold)
                                             .foregroundColor(.white)
                                         Image(systemName: "plus")
@@ -398,7 +402,7 @@ struct AgregarMedicamento: View {
                     .padding(.horizontal, 20)
                     .padding()
                 }
-                .navigationBarTitle("Agregar Medicamento")
+                .navigationBarTitle("Add Medicine")
                 .navigationBarTitleDisplayMode(.inline)
                 .onAppear {
                     modeloMedicamentos.getDataMedicamentos()
@@ -408,6 +412,7 @@ struct AgregarMedicamento: View {
             }
         }
     }
+
     func permisoNotificaciones() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
             if success {
@@ -419,8 +424,8 @@ struct AgregarMedicamento: View {
     }
     func definirNotificacion(for notificacion: Notificacion) {
         let content = UNMutableNotificationContent()
-        content.title = "Recordatorio de medicamento"
-        content.body = "Es hora de tomar \(notificacion.nombreMedicamentoRecordatorio)"
+        content.title = "Medtracker Reminder"
+        content.body = "It is time to take \(notificacion.nombreMedicamentoRecordatorio)"
         content.sound = UNNotificationSound.default
             
         for day in notificacion.notificationDays {

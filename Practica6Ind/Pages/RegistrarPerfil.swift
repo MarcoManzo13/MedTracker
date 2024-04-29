@@ -25,17 +25,17 @@ struct RegistrarPerfil: View {
                             .frame(width: 350, height: 300)
                             .padding(9)
                         VStack {
-                            Text("Correo")
+                            Text("Email")
                                 .padding(.top)
-                            TextField("Correo", text: $email)
+                            TextField("Email", text: $email)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .autocapitalization(.none)
                                 .disableAutocorrection(true)
                                 .frame(width: 300, height: 40)
                             
-                            Text("Contraseña")
+                            Text("Password")
                                 .padding(.top)
-                            TextField("Contraseña", text: $password)
+                            TextField("Password", text: $password)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .autocapitalization(.none)
                                 .disableAutocorrection(true)
@@ -59,7 +59,7 @@ struct RegistrarPerfil: View {
                                     .frame(width: 300, height: 60)
                                     .cornerRadius(20)
                                 
-                                Text("Registrarme")
+                                Text("Register")
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                                 
@@ -87,7 +87,7 @@ struct RegistrarPerfil: View {
                                     .cornerRadius(20)
                                 
                                 NavigationLink(destination: ContentView()) {
-                                    Text("Ya tienes cuenta? Inicia Sesión")
+                                    Text("Already have an account? Log In")
                                         .padding()
                                         .foregroundColor(.white)
                                         .fontWeight(.bold)
@@ -102,7 +102,7 @@ struct RegistrarPerfil: View {
                     .padding(.horizontal, 20)
                     
                 }
-                .navigationBarTitle("Registro")
+                .navigationBarTitle("Register")
                 .navigationBarTitleDisplayMode(.large)
             }
         }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0602DBDF2BDC28DD0087D89E /* MultiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 0602DBDE2BDC28DD0087D89E /* MultiPicker */; };
-		0602DBE52BDC39940087D89E /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0602DBE42BDC39940087D89E /* Notificaciones.swift */; };
 		0607FB5F2B979D2900143FF2 /* Practica6IndApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607FB5E2B979D2900143FF2 /* Practica6IndApp.swift */; };
 		0607FB612B979D2900143FF2 /* IniciarSesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0607FB602B979D2900143FF2 /* IniciarSesion.swift */; };
 		0607FB632B979D2A00143FF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0607FB622B979D2A00143FF2 /* Assets.xcassets */; };
@@ -81,7 +80,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0602DBE42BDC39940087D89E /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
 		0607FB5B2B979D2900143FF2 /* Practica6Ind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practica6Ind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0607FB5E2B979D2900143FF2 /* Practica6IndApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practica6IndApp.swift; sourceTree = "<group>"; };
 		0607FB602B979D2900143FF2 /* IniciarSesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IniciarSesion.swift; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 				061FFEA72BC9C5BA00BABBDE /* RegistrarPerfil.swift */,
 				0607FB602B979D2900143FF2 /* IniciarSesion.swift */,
 				06DD04632BCEEA960076F099 /* AgregarMedicamento.swift */,
-				0602DBE42BDC39940087D89E /* Notificaciones.swift */,
 				06ED9E562BE019CF006B0418 /* DashboardView.swift */,
 			);
 			path = Pages;
@@ -461,7 +458,6 @@
 				066B7EA32BBC8C1E00211C30 /* CrudUsuarios.swift in Sources */,
 				06DD04622BCEE8820076F099 /* Medicamentos.swift in Sources */,
 				061FFEA42BC9B20400BABBDE /* FilaMedicamentos.swift in Sources */,
-				0602DBE52BDC39940087D89E /* Notificaciones.swift in Sources */,
 				061FFEA62BC9C14900BABBDE /* EditarPerfil.swift in Sources */,
 				066B7EA62BBC8C5F00211C30 /* Usuario.swift in Sources */,
 				0607FB5F2B979D2900143FF2 /* Practica6IndApp.swift in Sources */,

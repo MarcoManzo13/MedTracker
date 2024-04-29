@@ -19,7 +19,7 @@ struct Inicio: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 100, height: 100)
         
-        Text(modeloUsuarios.listaUsuarios.first?.nombre ?? "Edita tu perfil...")
+        Text(modeloUsuarios.listaUsuarios.first?.nombre ?? "Edit your profile...")
             .padding()
             .frame(width: 150)
         
@@ -42,7 +42,7 @@ struct Inicio: View {
                             
                             Spacer()
                             
-                            Text("Editar Perfil")
+                            Text("Edit Profile")
                                 .padding()
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -59,13 +59,12 @@ struct Inicio: View {
             .padding()
         }
         
-        Text("Mis medicamentos")
+        Text("My Medicine")
             .fontWeight(.bold)
             .font(.system(size: 25))
-        
-        
-        FilaMedicamentos(time: "3:00pm", name: "Advil", dosage: "1 pill, after meal, daily")
-        FilaMedicamentos(time: "7:00pm, 3:00pm, 11:00pm", name: "Paracetamol", dosage: "1 pill, three times a day, daily")
+                    
+        FilaMedicamentos(time: "3:00pm", name: "Neurontin", dosage: "300mg")
+        FilaMedicamentos(time: "7:00pm, 3:00pm, 11:00pm", name: "Advil", dosage: "100mg")
         
         VStack {
             NavigationLink(destination: AgregarMedicamento()) {
@@ -86,7 +85,7 @@ struct Inicio: View {
                             
                             Spacer()
                             
-                            Text("Administrar Medicamentos")
+                            Text("Administer Medicine")
                                 .padding()
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -102,7 +101,7 @@ struct Inicio: View {
             .padding(.horizontal, 20)
             .padding()
             
-            NavigationLink(destination: DashboardView(title: "Medicamentos tomados a tiempo", value: 0)) {
+            NavigationLink(destination: DashboardView(title: "Medicine taken on time", value: 0)) {
                 HStack {
                     Spacer().frame(width: 20)
                     ZStack {
@@ -120,7 +119,7 @@ struct Inicio: View {
                             
                             Spacer()
                             
-                            Text("Historial de Cumplimiento")
+                            Text("Record of Compliance")
                                 .padding()
                                 .foregroundColor(.black)
                                 .fontWeight(.bold)
@@ -153,7 +152,7 @@ struct Inicio: View {
                         .frame(width: 300, height: 60)
                         .cornerRadius(20)
                     
-                    Text("Cerrar Sesión")
+                    Text("Sign out")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     

@@ -16,7 +16,7 @@ class ViewModelMedicamentosGenerales: ObservableObject {
     func getDataMedicamentos() {
         let db = Firestore.firestore()
         // Aquí se crea una referencia al documento de Firebase que se crea, esta referencia entra a la colección "users" y de ahí a la colección "medicamentos", antes de hacer las pruebas pensaba que a fuerzas se tenía que llamar users por la documentación, pero nop. Pero ya no quise cambiarlo para no hacer todas las pruebas de nuevo. Esto se agregó a todas las funciones.
-        db.collection("medicamentosGenerales").getDocuments { snapshot, error in
+        db.collection("generalMedicine").getDocuments { snapshot, error in
             if error == nil, let snapshot = snapshot {
                 DispatchQueue.main.async {
                     self.listaMedicamentosGenerales = snapshot.documents.map { d in
@@ -36,7 +36,7 @@ class ViewModelMedicamentosGenerales: ObservableObject {
     
     func searchMedicamento(query: String) {
             let db = Firestore.firestore()
-            db.collection("medicamentosGenerales")
+            db.collection("generalMedicine")
                 .whereField("nombre", isGreaterThanOrEqualTo: query)
                 .getDocuments { snapshot, error in
                     if let error = error {
