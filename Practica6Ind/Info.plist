@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>GoogleSignIn</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.736817233328-qipvmmjn2g6rpgqfc201v1rd9dl65jtu</string>
+                <string>fb1435405524035983</string>
+			</array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1435405524035983</string>
+    <key>FacebookClientToken</key>
+    <string>a5847750d093f6b4eaddbffaf70e8687</string>
+    <key>FacebookDisplayName</key>
+    <string>Practica6</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>We need Face ID to authenticate you securely.</string>
+</dict>
+</plist>
+
+
+
+
+
+
