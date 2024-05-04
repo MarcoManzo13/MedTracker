@@ -59,13 +59,6 @@ struct Inicio: View {
             .padding()
         }
         
-        Text("My Medicine")
-            .fontWeight(.bold)
-            .font(.system(size: 25))
-                    
-        FilaMedicamentos(time: "3:00pm", name: "Neurontin", dosage: "300mg")
-        FilaMedicamentos(time: "7:00pm, 3:00pm, 11:00pm", name: "Advil", dosage: "100mg")
-        
         VStack {
             NavigationLink(destination: AgregarMedicamento()) {
                 HStack {
